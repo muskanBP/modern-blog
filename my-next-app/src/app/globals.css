@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 240 10% 3.9%; /* Dark gray foreground */
+    --primary: 240 5.9% 10%; /* Dark primary color */
+    --primary-foreground: 0 0% 98%; /* Light primary foreground */
+    --radius: 0.5rem; /* Border radius */
+  }
+
+  /* Dark mode variables */
+  .dark {
+    --background: 240 10% 3.9%; /* Dark background */
+    --foreground: 0 0% 98%; /* Light foreground */
+  }
+
+  /* Blog card hover effect */
+  .blog-card {
+    border-radius: var(--radius);
+    padding: 20px;
+    background-color: hsl(var(--background));
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .blog-card:hover {
+    transform: scale(1.05); /* Hover scaling effect */
+  }
+
+  /* Adjust text size globally */
+  html {
+    -webkit-text-size-adjust: 100%; /* For Safari */
+    text-size-adjust: 100%; /* Modern browsers */
+  }
+
+  /* Avatar mask for cross-browser support */
+  .avatar_avatar__Qg_Wv {
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black); /* WebKit browsers */
+    mask-image: radial-gradient(circle, white, black); /* Modern browsers */
+  }
+}
+
+@layer preflight {
+  :where(.tailwind:not(.tailwind-no-preflight)) html,
+  :where(.tailwind-preflight) html {
+    -webkit-text-size-adjust: 100%; /* Safari */
+    text-size-adjust: 100%; /* Modern browsers */
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [vaul-drawer] {
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Modern browsers */
+  }
+}
